@@ -261,11 +261,9 @@ main {
 #audience-bg,
 #graphic,
 #photography {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  @media screen and (max-width: 799px) {
-  }
+  
+  background-size: cover;
+ 
 }
 .service {
   &-block {
@@ -282,7 +280,7 @@ main {
         @include flexDisplay(column, 1rem);
       }
       &-title {
-        @include fontSetting(35px, black, bolder);
+        @include fontSetting(25px, black, bolder);
       }
       @include flexDisplay(column, 0.5rem);
       justify-content: center;
@@ -382,7 +380,7 @@ main {
         background-image: url(images/mobile/image-graphic-design.jpg);
       }
       &-content {
-        @include fontSetting(18px, black, normal);
+        @include fontSetting(14px, black, normal);
         position: absolute;
         width: 60%;
         top: 70%;
@@ -399,7 +397,7 @@ main {
         background-image: url(images/mobile/image-photography.jpg);
       }
       &-content {
-        @include fontSetting(18px, black, normal);
+        @include fontSetting(14px, black, normal);
         position: absolute;
         width: 60%;
         top: 70%;
@@ -416,16 +414,16 @@ main {
   height: 75vh;
   @media screen and (max-width:799px) {
     padding-top:50%;
-  padding-bottom:50%;
+    padding-bottom:50%;
   }
   &-title{
     @include fontSetting(30px,gray , bolder)
   }
   .testimonial-block {
     @include flexDisplay(row, 1rem);
-
+    
     @media screen and (max-width: 799px) {
-      @include flexDisplay(column, 1rem);
+      @include flexDisplay(column, 1.5rem);
       justify-content: center;
       align-items: center;
     }
@@ -434,13 +432,27 @@ main {
     @include flexDisplay(column,1rem);
     justify-content: center;
     align-items: center;
+    @media screen and (max-width:799px){
+      row-gap:1.5rem;
+    }
     &-avatar{
       border-radius: 50%;
       width: 20%;
+      @media screen and (max-width:799px) {
+        width: 10%;
+      }
     }
     &-review{
-      @include fontSetting(18px,black,normal);
+      @include fontSetting(12px,black,normal);
+      line-height: 1rem;
+      width: 60%;
       text-align:center;
+    }
+    &-name{
+      @include fontSetting(13px,black,bolder);
+    }
+    &-position{
+      @include fontSetting(11px,gray,normal);
     }
   }
 }

@@ -273,10 +273,9 @@ main section:not(.footer-item) {
 #audience-bg,
 #graphic,
 #photography {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
+
 .service-block {
   display: flex;
   flex-direction: row;
@@ -308,7 +307,7 @@ main section:not(.footer-item) {
 }
 .service-block-item-title {
   font-family: "libre Baskerville", serif;
-  font-size: 35px;
+  font-size: 25px;
   color: black;
   font-weight: bolder;
 }
@@ -430,7 +429,7 @@ main section:not(.footer-item) {
 }
 .service #design #graphic-content {
   font-family: "libre Baskerville", serif;
-  font-size: 18px;
+  font-size: 14px;
   color: black;
   font-weight: normal;
   position: absolute;
@@ -454,7 +453,7 @@ main section:not(.footer-item) {
 }
 .service #design #photography-content {
   font-family: "libre Baskerville", serif;
-  font-size: 18px;
+  font-size: 14px;
   color: black;
   font-weight: normal;
   position: absolute;
@@ -492,7 +491,7 @@ main section:not(.footer-item) {
   #testimonials .testimonial-block {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 1.5rem;
     justify-content: center;
     align-items: center;
   }
@@ -504,16 +503,40 @@ main section:not(.footer-item) {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 799px) {
+  #testimonials .client {
+    row-gap: 1.5rem;
+  }
+}
 #testimonials .client-avatar {
   border-radius: 50%;
   width: 20%;
 }
+@media screen and (max-width: 799px) {
+  #testimonials .client-avatar {
+    width: 10%;
+  }
+}
 #testimonials .client-review {
   font-family: "libre Baskerville", serif;
-  font-size: 18px;
+  font-size: 12px;
   color: black;
   font-weight: normal;
+  line-height: 1rem;
+  width: 60%;
   text-align: center;
+}
+#testimonials .client-name {
+  font-family: "libre Baskerville", serif;
+  font-size: 13px;
+  color: black;
+  font-weight: bolder;
+}
+#testimonials .client-position {
+  font-family: "libre Baskerville", serif;
+  font-size: 11px;
+  color: gray;
+  font-weight: normal;
 }
 
 #gallery {
