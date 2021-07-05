@@ -4,6 +4,5 @@ function toggleMenu(){
     menu.style.display = "none";
   }else{
     menu.style.display = "flex";
-
   }
 }

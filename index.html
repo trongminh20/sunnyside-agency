@@ -24,6 +24,20 @@
       color: hsl(228, 45%, 44%);
     }
   </style>
+  <script>
+    window.onload = function(){
+      window.addEventListener('resize', function(){
+        if(window.innerWidth >=800){
+          document.getElementById('toggle-menu').style.display = "flex";
+          document.getElementById('hbg-btn').style.display = "none";
+        }
+        if(window.innerWidth < 800){
+          document.getElementById('toggle-menu').style.display = "none";
+          document.getElementById('hbg-btn').style.display = "block";
+        }
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -39,7 +53,7 @@
             <li class="nav-link"><a href="">Contact</a></li>
           </ul>
         </div>
-        <div class="navbar-responsive-btn" onclick="toggleMenu();">
+        <div class="navbar-responsive-btn" id='hbg-btn' onclick="toggleMenu();">
           <i class="fas fa-bars"></i>
         </div>
       </nav>
