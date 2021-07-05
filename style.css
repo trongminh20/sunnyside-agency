@@ -297,6 +297,13 @@ main section:not(.footer-item) {
 #introduction #page-title * {
   color: white;
 }
+#introduction #page-title h1 {
+  font-family: "libre Baskerville", serif;
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
 #introduction #page-title .fa-arrow-down {
   font-stretch: extra-condensed;
   transform: scale(2, 2.5);
@@ -619,10 +626,16 @@ main section:not(.footer-item) {
   color: black;
   font-weight: bold;
 }
+.footer #sitemap .nav-link:hover a {
+  color: white;
+}
 .footer #social-link {
   display: flex;
   flex-direction: row;
   column-gap: 1rem;
+}
+.footer #social-link i:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

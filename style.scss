@@ -213,25 +213,25 @@ main {
       }
       @media screen and (max-width: 799px) {
         position: absolute;
-        width:80%;
+        width: 80%;
         height: 5rem;
-        padding:1rem;
-        top:7rem;
-        left:50%;
+        padding: 1rem;
+        top: 7rem;
+        left: 50%;
         transform: translate(-50%, -50%);
         @include flexDisplay(column, 5px);
         justify-content: center;
         background-color: white;
         .nav-link {
           width: 100%;
-          display:flex;
+          display: flex;
           justify-content: center;
           a {
             @include fontSetting(14px, black, bold);
             text-align: center;
           }
           &:hover {
-            background-color:$yellow;
+            background-color: $yellow;
             border-radius: 25px;
             padding: 0.3rem;
             a {
@@ -279,6 +279,10 @@ main {
     align-items: center;
     * {
       color: white;
+    }
+    h1 {
+      @include fontSetting(30px, white, bolder);
+      text-transform: uppercase;
     }
     .fa-arrow-down {
       font-stretch: extra-condensed;
@@ -513,12 +517,22 @@ main {
   }
   #sitemap {
     @include flexDisplay(row, 1rem);
-    .nav-link a {
-      text-decoration: none;
-      @include fontSetting(14px, black, bold);
+    .nav-link {
+      a {
+        text-decoration: none;
+        @include fontSetting(14px, black, bold);
+      }
+      &:hover{
+        a{
+          color:white;
+        }
+      }
     }
   }
   #social-link {
     @include flexDisplay(row, 1rem);
+    i:hover{
+      color:white;
+    }
   }
 }
