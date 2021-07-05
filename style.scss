@@ -161,7 +161,7 @@ main {
     width: 80%;
     margin: auto;
   }
-  section {
+  section:not(.footer-item){
     width: 100%;
     overflow: hidden;
   }
@@ -264,8 +264,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
-  @media screen and (max-width:799px){    
-    
+  @media screen and (max-width: 799px) {
   }
 }
 .service {
@@ -280,20 +279,23 @@ main {
       @media screen and (max-width: 799px) {
         width: 100%;
         height: 80vh;
+        @include flexDisplay(column, 1rem);
       }
-      &-title{
+      &-title {
         @include fontSetting(35px, black, bolder);
       }
       @include flexDisplay(column, 0.5rem);
       justify-content: center;
       .btn-learnmore {
-        width: 25%;
-        @include fontSetting(18px,black ,normal );
-        border:none;
-        background:none;
-        margin-left:3.5rem;
-        &:hover{
-          border-bottom:2px solid yellowgreen;
+        width: 30%;
+        @include fontSetting(18px, black, normal);
+        border: none;
+        background: none;
+        @media screen and (min-width: 800px) {
+          margin-left: 4rem;
+        }
+        &:hover {
+          border-bottom: 2px solid yellowgreen;
         }
       }
     }
@@ -303,13 +305,26 @@ main {
       @include flexDisplay(column-reverse, 0);
     }
     &-content {
-      row-gap:1rem;
-      h2,p{
-        width:50%;
-        margin-left:5rem;
+      row-gap: 1rem;
+      h2,
+      p {
+        width: 50%;
+        @media screen and (min-width:800px){
+          margin-left: 5rem;
+        }
       }
-      p{
-        font-size:18px;
+      p {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 799px) {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        h2,
+        p {
+          width: 90%;
+          text-align: center;
+        }
       }
     }
     &-bg {
@@ -321,13 +336,26 @@ main {
   }
   #audience {
     &-content {
-      row-gap:1rem;
-      h2,p{
-        width:50%;
-        margin-left:5rem;
+      row-gap: 1rem;
+      h2,
+      p {
+        width: 50%;
+        @media screen and (min-width:800px){
+          margin-left: 5rem;
+        }
       }
-      p{
-        font-size:18px;
+      p {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 799px) {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        h2,
+        p {
+          width: 90%;
+          text-align: center;
+        }
       }
     }
     &-bg {
@@ -338,16 +366,16 @@ main {
     }
   }
   #design {
-    h2{
-      position:absolute;
+    h2 {
+      position: absolute;
       width: 60%;
       top: 60%;
       text-align: center;
     }
     #graphic {
-      @include flexDisplay(column,.5rem);
+      @include flexDisplay(column, 0.5rem);
       justify-content: center;
-      align-items:center;
+      align-items: center;
       position: relative;
       background-image: url(images/desktop/image-graphic-design.jpg);
       @media screen and (max-width: 799px) {
@@ -358,14 +386,14 @@ main {
         position: absolute;
         width: 60%;
         top: 70%;
-        text-align:center;
+        text-align: center;
       }
     }
     #photography {
       position: relative;
-      @include flexDisplay(column,.5rem);
+      @include flexDisplay(column, 0.5rem);
       justify-content: center;
-      align-items:center;
+      align-items: center;
       background-image: url(images/desktop/image-photography.jpg);
       @media screen and (max-width: 799px) {
         background-image: url(images/mobile/image-photography.jpg);
@@ -375,20 +403,24 @@ main {
         position: absolute;
         width: 60%;
         top: 70%;
-        // left: 50%;
-        // transform: translate(-50%);
-        text-align:center;
+        text-align: center;
       }
     }
   }
 }
 
 #testimonials {
-  @include flexDisplay(column, 1rem);
+  @include flexDisplay(column, 3rem);
   justify-content: center;
   align-items: center;
   height: 75vh;
-
+  @media screen and (max-width:799px) {
+    padding-top:50%;
+  padding-bottom:50%;
+  }
+  &-title{
+    @include fontSetting(30px,gray , bolder)
+  }
   .testimonial-block {
     @include flexDisplay(row, 1rem);
 
@@ -396,6 +428,19 @@ main {
       @include flexDisplay(column, 1rem);
       justify-content: center;
       align-items: center;
+    }
+  }
+  .client{
+    @include flexDisplay(column,1rem);
+    justify-content: center;
+    align-items: center;
+    &-avatar{
+      border-radius: 50%;
+      width: 20%;
+    }
+    &-review{
+      @include fontSetting(18px,black,normal);
+      text-align:center;
     }
   }
 }
@@ -413,5 +458,27 @@ main {
     .gallery-img {
       width: 100%;
     }
+  }
+}
+
+.footer{
+  width: 100%;
+  height: 50vh;
+  background-color:$footer-color;
+  @include flexDisplay(column,2rem);
+  justify-content: center;
+  align-items: center;
+  #legal{
+    @include fontSetting(30px,black ,bolder );
+  }
+  #sitemap{
+      @include flexDisplay(row,1rem);
+      .nav-link a{
+        text-decoration: none;
+        @include fontSetting(14px,black , bold);
+      }
+  }
+  #social-link{
+    @include flexDisplay(row,1rem);
   }
 }
