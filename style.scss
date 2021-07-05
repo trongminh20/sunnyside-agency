@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
 
 $footer-color: #91d3c6;
+$red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
 
 @mixin flexDisplay($direction, $gap) {
   display: flex;
@@ -161,7 +163,7 @@ main {
     width: 80%;
     margin: auto;
   }
-  section:not(.footer-item){
+  section:not(.footer-item) {
     width: 100%;
     overflow: hidden;
   }
@@ -185,11 +187,11 @@ main {
       display: flex;
       align-items: center;
     }
-  }
-  &-nav {
     @media screen and( max-width:799px) {
       position: relative;
     }
+  }
+  &-nav {
     &-item {
       @include flexDisplay(row, 15px);
       padding-right: 2rem;
@@ -210,16 +212,44 @@ main {
         }
       }
       @media screen and (max-width: 799px) {
+        position: absolute;
+        width:80%;
+        height: 5rem;
+        padding:1rem;
+        top:7rem;
+        left:50%;
+        transform: translate(-50%, -50%);
         @include flexDisplay(column, 5px);
         justify-content: center;
-        align-items: center;
-        position: absolute;
+        background-color: white;
+        .nav-link {
+          width: 100%;
+          display:flex;
+          justify-content: center;
+          a {
+            @include fontSetting(14px, black, bold);
+            text-align: center;
+          }
+          &:hover {
+            background-color:$yellow;
+            border-radius: 25px;
+            padding: 0.3rem;
+            a {
+              color: black;
+            }
+          }
+        }
       }
     }
   }
   &-responsive-btn {
     @media screen and (min-width: 800px) {
       display: none;
+    }
+    @media screen and (max-width: 799px) {
+      display: block;
+      margin-right: 1rem;
+      color: white;
     }
   }
 }
@@ -261,9 +291,7 @@ main {
 #audience-bg,
 #graphic,
 #photography {
-  
   background-size: cover;
- 
 }
 .service {
   &-block {
@@ -307,7 +335,7 @@ main {
       h2,
       p {
         width: 50%;
-        @media screen and (min-width:800px){
+        @media screen and (min-width: 800px) {
           margin-left: 5rem;
         }
       }
@@ -338,7 +366,7 @@ main {
       h2,
       p {
         width: 50%;
-        @media screen and (min-width:800px){
+        @media screen and (min-width: 800px) {
           margin-left: 5rem;
         }
       }
@@ -412,47 +440,47 @@ main {
   justify-content: center;
   align-items: center;
   height: 75vh;
-  @media screen and (max-width:799px) {
-    padding-top:50%;
-    padding-bottom:50%;
+  @media screen and (max-width: 799px) {
+    padding-top: 50%;
+    padding-bottom: 50%;
   }
-  &-title{
-    @include fontSetting(30px,gray , bolder)
+  &-title {
+    @include fontSetting(30px, gray, bolder);
   }
   .testimonial-block {
     @include flexDisplay(row, 1rem);
-    
+
     @media screen and (max-width: 799px) {
       @include flexDisplay(column, 1.5rem);
       justify-content: center;
       align-items: center;
     }
   }
-  .client{
-    @include flexDisplay(column,1rem);
+  .client {
+    @include flexDisplay(column, 1rem);
     justify-content: center;
     align-items: center;
-    @media screen and (max-width:799px){
-      row-gap:1.5rem;
+    @media screen and (max-width: 799px) {
+      row-gap: 1.5rem;
     }
-    &-avatar{
+    &-avatar {
       border-radius: 50%;
       width: 20%;
-      @media screen and (max-width:799px) {
+      @media screen and (max-width: 799px) {
         width: 10%;
       }
     }
-    &-review{
-      @include fontSetting(12px,black,normal);
+    &-review {
+      @include fontSetting(12px, black, normal);
       line-height: 1rem;
       width: 60%;
-      text-align:center;
+      text-align: center;
     }
-    &-name{
-      @include fontSetting(13px,black,bolder);
+    &-name {
+      @include fontSetting(13px, black, bolder);
     }
-    &-position{
-      @include fontSetting(11px,gray,normal);
+    &-position {
+      @include fontSetting(11px, gray, normal);
     }
   }
 }
@@ -473,24 +501,24 @@ main {
   }
 }
 
-.footer{
+.footer {
   width: 100%;
   height: 50vh;
-  background-color:$footer-color;
-  @include flexDisplay(column,2rem);
+  background-color: $footer-color;
+  @include flexDisplay(column, 2rem);
   justify-content: center;
   align-items: center;
-  #legal{
-    @include fontSetting(30px,black ,bolder );
+  #legal {
+    @include fontSetting(30px, black, bolder);
   }
-  #sitemap{
-      @include flexDisplay(row,1rem);
-      .nav-link a{
-        text-decoration: none;
-        @include fontSetting(14px,black , bold);
-      }
+  #sitemap {
+    @include flexDisplay(row, 1rem);
+    .nav-link a {
+      text-decoration: none;
+      @include fontSetting(14px, black, bold);
+    }
   }
-  #social-link{
-    @include flexDisplay(row,1rem);
+  #social-link {
+    @include flexDisplay(row, 1rem);
   }
 }
